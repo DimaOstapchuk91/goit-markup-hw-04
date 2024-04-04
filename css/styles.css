@@ -84,6 +84,10 @@ address {
 
 .header-section {
   border-bottom: 1px solid #e7e9fc;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 
 .header-content {
@@ -136,11 +140,28 @@ address {
   letter-spacing: 0.02em;
   color: #2e2f42;
   padding: 24px 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-list-link:hover,
 .header-list-link:focus {
   color: #404bbf;
+}
+
+.active {
+  position: relative;
+  color: #404bbf;
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  border-radius: 2px;
+  width: 100%;
+  height: 4px;
+  background-color: #404bbf;
+  right: 0;
+  bottom: -1px;
 }
 
 .header-address-list {
@@ -155,6 +176,7 @@ address {
   letter-spacing: 0.02em;
   color: #434455;
   padding: 24px 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-address-link:hover,
@@ -167,6 +189,16 @@ address {
 .hero-section {
   background-color: #2e2f42;
   padding: 188px 0;
+  margin: 0 auto;
+  max-width: 1440px;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/background-hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-title {
@@ -196,11 +228,12 @@ address {
   display: block;
   margin: 0 auto;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
 .hero-btn:focus {
-  background: #404bbf;
+  background-color: #404bbf;
 }
 
 /* ---------advantages of the company section------ */
@@ -213,6 +246,16 @@ address {
 
 .advantages-list-item {
   width: calc((100% - 72px) / 4);
+}
+
+.advantages-list-icon {
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  background: #f4f4fd;
+  width: 100%;
+  height: 112px;
+  padding: 24px 0;
+  margin-bottom: 8px;
 }
 
 .advantages-list-title {
@@ -253,6 +296,10 @@ address {
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
+.team-list-item:hover .soc-icon {
+  background-color: #404bbf;
+}
+
 .team-member-foto {
 }
 
@@ -269,6 +316,40 @@ address {
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-align: center;
+  margin-bottom: 8px;
+}
+
+.soc-icon-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.soc-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  margin: 0;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.team-list-item .soc-icon:hover,
+.soc-icon:focus {
+  background-color: #31d0aa;
+}
+
+.soc-icon-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: #ffffff;
 }
 
 /* --------------PORTFOLIO SECTION----------------- */
@@ -287,9 +368,34 @@ address {
 
 .portfolio-list-item {
   width: calc((100% - 2 * 24px) / 3);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-list-image {
+}
+
+.portfolio-images-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-transform-container {
+  position: absolute;
+  height: 100%;
+  background-color: #4d5ae5;
+  padding: 40px 32px;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-list-item:hover .portfolio-transform-container {
+  transform: translateY(0);
+}
+
+.portfolio-trasform-text {
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
 }
 
 .portfolio-content-border {
@@ -297,6 +403,13 @@ address {
   border-left: 1px solid #e7e9fc;
   border-right: 1px solid #e7e9fc;
   padding: 32px 16px;
+}
+
+.portfolio-list-item:hover,
+.portfolio-list-item:focus .portfolio-content-border:hover,
+.portfolio-content-border:focus {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-list-title {
@@ -327,4 +440,18 @@ address {
   letter-spacing: 0.02em;
   color: #f4f4fd;
   max-width: 264px;
+}
+
+.fotter-info {
+  margin-right: 120px;
+}
+
+.soc-text {
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.footer-content {
+  display: flex;
 }
