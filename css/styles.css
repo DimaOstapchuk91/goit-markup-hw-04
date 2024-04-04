@@ -406,8 +406,7 @@ address {
 }
 
 .portfolio-list-item:hover,
-.portfolio-list-item:focus .portfolio-content-border:hover,
-.portfolio-content-border:focus {
+.portfolio-list-item:focus .portfolio-content-border {
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
@@ -450,6 +449,11 @@ address {
   font-weight: 500;
   margin-bottom: 16px;
   color: #ffffff;
+}
+
+.footer-icon:hover,
+.footer-icon:focus {
+  background-color: #31d0aa;
 }
 
 .footer-content {
